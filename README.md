@@ -35,7 +35,7 @@ data, err := toml.MarshalTOML(Config{
 
 Produces:
 
-```go
+```toml
 [server]
 port = 8080
 host = "localhost"
