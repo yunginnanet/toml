@@ -205,6 +205,7 @@ func (d *decoder) applyValue(targetElem reflect.Value, tk string, tv any) error 
 		}
 
 		// println("found : ", field.Type.Kind().String(), " in struct for toml tag: ", field.Tag.Get("toml"))
+
 		//nolint:exhaustive
 		switch field.Type.Kind() {
 		case reflect.String:
@@ -283,7 +284,8 @@ func (d *decoder) handleTable(table map[string]interface{}, k string) error {
 	switch targetElem.Type().Field(fieldIndex).Type.Kind() { //nolint:exhaustive
 	case reflect.Ptr:
 		if targetElem.Field(fieldIndex).IsNil() {
-			return fmt.Errorf("%w: expected struct for '%s', got nil ptr", ErrMismatchingSchema, k)
+			targetElem.Field(fieldIndex).Set(reflect.New(targetElem.Type().Field(fieldIndex).Type.Elem()))
+			// return fmt.Errorf("%w: expected struct for '%s', got nil ptr", ErrMismatchingSchema, k)
 		}
 		if targetElem.Field(fieldIndex).Elem().Kind() != reflect.Struct {
 			return fmt.Errorf(
