@@ -1,7 +1,7 @@
 # toml
 `github.com/yunginnanet/toml`
 
-[![GoDoc](https://godoc.org/github.com/yunginnanet/toml?status.svg)](https://pkg.go.dev/github.com/yunginnanet/toml) [![codecov](https://codecov.io/gh/yunginnanet/common/branch/main/graph/badge.svg?token=vk5frSGqhq)](https://codecov.io/gh/yunginnanet/common)
+[![GoDoc](https://godoc.org/github.com/yunginnanet/toml?status.svg)](https://pkg.go.dev/github.com/yunginnanet/toml) [![codecov](https://codecov.io/gh/yunginnanet/toml/branch/main/graph/badge.svg?token=vk5frSGqhq)](https://codecov.io/gh/yunginnanet/toml)
 
 ---
 
