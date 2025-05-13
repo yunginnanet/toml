@@ -1,0 +1,4 @@
+github.com/yunginnanet/common v1.0.0 h1:P5kn6M28DwTDNK30d/s/WG+uoAFXrm1qO84l1Izwkhk=
+github.com/yunginnanet/common v1.0.0/go.mod h1:9Xh9xE2R+YUI1y7VYwijwaeJvEK8kAJQuyruSr5jlGY=
+golang.org/x/text v0.25.0 h1:qVyWApTSYLk/drJRO5mDlNYskwQznZmkpV2c8q9zls4=
+golang.org/x/text v0.25.0/go.mod h1:WEdwpYrmk1qmdHvhkSTNPm3app7v4rsT8F2UD6+VHIA=
