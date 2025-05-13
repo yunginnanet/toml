@@ -1,6 +1,6 @@
 module github.com/yunginnanet/toml
 
-go 1.24.2
+go 1.23.0
 
 require (
 	github.com/yunginnanet/common v1.0.1
