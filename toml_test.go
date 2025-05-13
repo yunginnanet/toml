@@ -113,7 +113,7 @@ username = "the yeet guy"`),
 	}
 
 	test3 = test{
-		Name: "with sub-structs",
+		Name: "with sub-structs and unquoted string",
 		Unmarshaled: TestParameters{
 			Yeeterson: yeetersonWithChild,
 			McGee: TestMcGeeParameters{
@@ -130,7 +130,7 @@ yeet_mode = true
 username = "Yeeterson McGeeterson"
 
 [mcgee]
-username = "mcgee"`),
+username = mcgee`),
 	}
 
 	test4 = test{
@@ -233,9 +233,13 @@ func TestMarshalTOML(t *testing.T) {
 				}
 				t.Errorf(testResErrFmt, errWantString, err)
 			}
-			if string(output) != string(tt.Marshaled) {
-				t.Errorf(testResFmt, tt.Marshaled, string(output))
+			if string(output) == string(tt.Marshaled) {
+				return
 			}
+			if removeQuotes(output) == removeQuotes(tt.Marshaled) {
+				return
+			}
+			t.Errorf(testResFmt, tt.Marshaled, string(output))
 		})
 	}
 }

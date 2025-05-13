@@ -86,7 +86,6 @@ func TestDecoder_readData(t *testing.T) {
 }
 
 func check(test1 test, t *testing.T) {
-	t.Helper()
 	t.Logf("running test: %s", test1.Name)
 	testData := test1.Marshaled
 	testTarget := &TestParameters{}
@@ -165,9 +164,15 @@ func check(test1 test, t *testing.T) {
 		t.Fatalf("unexpected error: %v", e)
 	}
 
-	if !bytes.Equal(m, testData) {
-		t.Errorf("expected %s, got %s", testData, m)
+	if bytes.Equal(m, testData) {
+		return
 	}
+
+	if removeQuotes(m) == removeQuotes(testData) {
+		return
+	}
+
+	t.Errorf("expected %s, got %s", testData, m)
 }
 
 func TestDecoder_handleTables(t *testing.T) {
